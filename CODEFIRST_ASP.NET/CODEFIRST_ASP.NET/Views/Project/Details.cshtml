@@ -1,4 +1,4 @@
-﻿@model CODEFIRST_ASP.NET.Models.ProjectDetail
+﻿@model CODEFIRST_ASP.NET.Models.Project
 
 
 @{
@@ -12,35 +12,27 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayFor(model => model.Employee.Name)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Employee.Name)
+            @Html.DisplayFor(model => model.Name)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Project.Name)
+            @Html.DisplayNameFor(model => model.StartDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Project.Name)
+            @Html.DisplayFor(model => model.StartDate)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Project.StartDate)
+            @Html.DisplayNameFor(model => model.EndDate)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Project.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Project.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Project.EndDate)
+            @Html.DisplayFor(model => model.EndDate)
         </dd>
 
     </dl>

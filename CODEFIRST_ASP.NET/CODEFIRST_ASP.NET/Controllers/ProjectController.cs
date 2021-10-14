@@ -73,12 +73,12 @@ namespace CODEFIRST_ASP.NET.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Employee employee = _dbContext.Employee.Find(id);
-            if (employee == null)
+            Project project = _dbContext.Project.Find(id);
+            if (project == null)
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View(project);
         }
 
         // POST: Project/Edit/5
