@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CODEFIRST_ASP.NET.Models.Project>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Projects</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.ProjectID)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.TeamSize)</th>
+            <th>@Html.DisplayNameFor(m => m.StartDate)</th>
+            <th>@Html.DisplayNameFor(m => m.EndDate)</th>
+            <th>@Html.DisplayNameFor(m => m.Status)</th>
+            <th>@Html.DisplayNameFor(m => m.IsActive)</th>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.Create)</th>
+            <th>@Html.DisplayNameFor(m => m.CreatedBy)</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var employees in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => employees.ProjectID)</td>
+                <td>@Html.DisplayFor(m => employees.Name)</td>
+                <td>@Html.DisplayFor(m => employees.TeamSize)</td>
+                <td>@Html.DisplayFor(m => employees.StartDate)</td>
+                <td>@Html.DisplayFor(m => employees.EndDate)</td>
+                <td>@Html.DisplayFor(m => employees.Status)</td>
+                <td>@employees.IsActive</td>
+                <td>@Html.DisplayFor(m => employees.Description)</td>
+                <td>@Html.DisplayFor(m => employees.Create)</td>
+                <td>@Html.DisplayFor(m => employees.CreatedBy)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = employees.ProjectID }) |
+                    @Html.ActionLink("Details", "Details", new { id = employees.ProjectID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = employees.ProjectID })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>  

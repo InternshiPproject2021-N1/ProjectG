@@ -15,7 +15,7 @@ namespace CrudMVCEFApp.Models
 {
         public class EmployeeDbContext : DbContext
         {
-            public EmployeeDbContext()
+            public EmployeeDbContext() : base("EmployeeContext")
             {
 
             }

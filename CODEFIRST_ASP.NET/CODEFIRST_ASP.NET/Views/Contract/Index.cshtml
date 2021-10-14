@@ -1,0 +1,48 @@
+﻿@model IEnumerable<CODEFIRST_ASP.NET.Models.Contract>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Contracts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.ContractID)</th>
+            <th>@Html.DisplayNameFor(m => m.Contents)</th>
+            <th>@Html.DisplayNameFor(m => m.ContractType)</th>
+            <th>@Html.DisplayNameFor(m => m.Employee.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.SignDate)</th>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.Create)</th>
+            <th>@Html.DisplayNameFor(m => m.CreatedBy)</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var employees in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => employees.ContractID)</td>
+                <td>@Html.DisplayFor(m => employees.Contents)</td>
+                <td>@Html.DisplayFor(m => employees.ContractType)</td>
+                <td>@Html.DisplayFor(m => employees.Employee.Name)</td>
+                <td>@Html.DisplayFor(m => employees.SignDate)</td>
+                <td>@Html.DisplayFor(m => employees.Description)</td>
+                <td>@Html.DisplayFor(m => employees.Create)</td>
+                <td>@Html.DisplayFor(m => employees.CreatedBy)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = employees.ContractID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = employees.ContractID })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>  

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<CODEFIRST_ASP.NET.Models.Role>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Roles</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.RoleID)</th>
+            <th>@Html.DisplayNameFor(m => m.Name)</th>
+            <th>@Html.DisplayNameFor(m => m.Description)</th>
+            <th>@Html.DisplayNameFor(m => m.Create)</th>
+            <th>@Html.DisplayNameFor(m => m.CreatedBy)</th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        @foreach (var employees in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(m => employees.RoleID)</td>
+                <td>@Html.DisplayFor(m => employees.Name)</td>
+                <td>@Html.DisplayFor(m => employees.Description)</td>
+                <td>@Html.DisplayFor(m => employees.Create)</td>
+                <td>@Html.DisplayFor(m => employees.CreatedBy)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = employees.RoleID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = employees.RoleID })
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>  
