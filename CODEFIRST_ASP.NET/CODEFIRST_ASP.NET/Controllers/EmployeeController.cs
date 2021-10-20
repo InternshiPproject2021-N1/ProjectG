@@ -18,11 +18,18 @@ namespace CODEFIRST_ASP.NET.Controllers
         {
             this._dbContext = new EmployeeContext();
         }
-        // GET: Employee
+ 
         public ActionResult Index()
         {
-            var employeeList = this._dbContext.Employee.ToList();
-            return View(employeeList);
+            return View();
+        }
+
+        public JsonResult List()
+        {
+            _dbContext.Configuration.ProxyCreationEnabled = false;
+            List<Employee> employeeList = _dbContext.Employee.ToList<Employee>();
+            return Json(new { data = employeeList },
+            JsonRequestBehavior.AllowGet);
         }
 
         public ActionResult Create()
@@ -94,7 +101,6 @@ namespace CODEFIRST_ASP.NET.Controllers
             return View(employeeToUpdate);
         }
 
-        // GET: Employee/Delete/5
         public ActionResult Delete(String id, bool? saveChangesError = false)
         {
             if (id == null)
@@ -113,7 +119,6 @@ namespace CODEFIRST_ASP.NET.Controllers
             return View(employee);
         }
 
-        // POST: Employee/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(String id)
@@ -131,6 +136,7 @@ namespace CODEFIRST_ASP.NET.Controllers
             }
             return RedirectToAction("Index");
         }
+
 
         protected override void Dispose(bool disposing)
         {

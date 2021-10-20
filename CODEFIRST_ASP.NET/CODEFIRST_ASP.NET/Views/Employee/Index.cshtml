@@ -3,14 +3,15 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
 <h2>Employees</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<table class="table">
+<table class="table" id="empTable">
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(m => m.EmpID)</th>
@@ -24,31 +25,47 @@
             <th>@Html.DisplayNameFor(m => m.Description)</th>
             <th>@Html.DisplayNameFor(m => m.Create)</th>
             <th>@Html.DisplayNameFor(m => m.CreatedBy)</th>
+            <th>Action</th>
         </tr>
     </thead>
+    <tbody class="tbody"></tbody>
+</table>
 
+<script src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+<script>
+    var dataTable;
 
-    <tbody>
-        @foreach (var employees in Model)
-        {
-        <tr>
-            <td>@Html.DisplayFor(m => employees.EmpID)</td>
-            <td>@Html.DisplayFor(m => employees.Name)</td>
-            <td>@Html.DisplayFor(m => employees.Address)</td>
-            <td>@Html.DisplayFor(m => employees.Email)</td>
-            <td>@Html.DisplayFor(m => employees.Age)</td>
-            <td>@Html.DisplayFor(m => employees.Status)</td>
-            <td>@employees.IsActive</td>
-            <td>@Html.DisplayFor(m => employees.Rank)</td>
-            <td>@Html.DisplayFor(m => employees.Description)</td>
-            <td>@Html.DisplayFor(m => employees.Create)</td>
-            <td>@Html.DisplayFor(m => employees.CreatedBy)</td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = employees.EmpID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = employees.EmpID })
-            </td>
-        </tr>
-
-        }
-    </tbody>
-</table>  
+    $(document).ready(function () {
+        dataTable = $("#empTable").dataTable({
+            "ajax": {
+                "url": "/Employee/List",
+                "type": "GET",
+                "datatype": "json"
+            },
+            "columns": [
+                {
+                    "data": "EmpID",
+                },
+                { "data": "Name" },
+                { "data": "Address" },
+                { "data": "Email" },
+                { "data": "Age" },
+                { "data": "Status" },
+                { "data": "IsActive" },
+                { "data": "Rank" },
+                { "data": "Description" },
+                { "data": "Create" },
+                { "data": "CreatedBy" },
+                {
+                    "data": "EmpID",
+                    "render": function (data, type, row) {
+                        var ID = row["EmpID"];
+                        debugger;
+                        return '<a>Delete</a>';
+                    }
+                },
+            ],
+        });
+    });
+</script>

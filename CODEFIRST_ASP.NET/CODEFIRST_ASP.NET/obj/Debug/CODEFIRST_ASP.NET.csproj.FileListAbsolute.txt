@@ -1,3 +1,7 @@
+D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.ValueTuple.dll
+D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\VBCSCompiler.exe
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\CODEFIRST_ASP.NET.dll.config
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\CODEFIRST_ASP.NET.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\CODEFIRST_ASP.NET.pdb
@@ -38,9 +42,6 @@ D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.S
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Security.Cryptography.Encoding.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Security.Cryptography.Primitives.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Text.Encoding.CodePages.dll
-D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Threading.Tasks.Extensions.dll
-D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.ValueTuple.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Xml.ReaderWriter.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Xml.XmlDocument.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.Xml.XPath.dll
@@ -48,7 +49,6 @@ D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\System.X
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\vbc.exe
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\vbc.exe.config
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\vbc.rsp
-D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\VBCSCompiler.exe
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\roslyn\VBCSCompiler.exe.config
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\Antlr3.Runtime.dll
 D:\.NETtraining\ProjectG\CODEFIRST_ASP.NET\CODEFIRST_ASP.NET\bin\EntityFramework.dll

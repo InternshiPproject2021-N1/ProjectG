@@ -21,9 +21,10 @@ namespace CODEFIRST_ASP.NET.Models
         public string Address { get; set; }
 
         [MaxLength(50, ErrorMessage = "Maximum 100 characters are allowed")]
+        [DataType(DataType.EmailAddress, ErrorMessage = "E-mail is not valid")]
         public string Email { get; set; }
 
-        [Range(1, 100, ErrorMessage = "Age must be greater than 0")]
+        [Range(18, 100, ErrorMessage = "Age must be greater than 18")]
         public int Age { get; set; }
         public Status? Status { get; set; }
 
