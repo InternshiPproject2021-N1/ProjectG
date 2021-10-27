@@ -14,18 +14,15 @@
 <table class="table" id="empTable">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(m => m.EmpID)</th>
             <th>@Html.DisplayNameFor(m => m.Name)</th>
             <th>@Html.DisplayNameFor(m => m.Address)</th>
             <th>@Html.DisplayNameFor(m => m.Email)</th>
             <th>@Html.DisplayNameFor(m => m.Age)</th>
-            <th>@Html.DisplayNameFor(m => m.Status)</th>
-            <th>@Html.DisplayNameFor(m => m.IsActive)</th>
             <th>@Html.DisplayNameFor(m => m.Rank)</th>
             <th>@Html.DisplayNameFor(m => m.Description)</th>
             <th>@Html.DisplayNameFor(m => m.Create)</th>
             <th>@Html.DisplayNameFor(m => m.CreatedBy)</th>
-            <th>Action</th>
+            <th></th>
         </tr>
     </thead>
     <tbody class="tbody"></tbody>
@@ -44,28 +41,30 @@
                 "datatype": "json"
             },
             "columns": [
-                {
-                    "data": "EmpID",
-                },
                 { "data": "Name" },
                 { "data": "Address" },
                 { "data": "Email" },
                 { "data": "Age" },
-                { "data": "Status" },
-                { "data": "IsActive" },
                 { "data": "Rank" },
                 { "data": "Description" },
-                { "data": "Create" },
+                {
+                    "data": "Create",
+                    'render': function (jsonDate) {
+                        var date = new Date(parseInt(jsonDate.substr(6)));
+                        var month = ("0" + (date.getMonth() + 1)).slice(-2);
+                        return ("0" + date.getDate()).slice(-2) + '-' + month + '-' + date.getFullYear();
+                    }
+                },
                 { "data": "CreatedBy" },
                 {
                     "data": "EmpID",
-                    "render": function (data, type, row) {
-                        var ID = row["EmpID"];
-                        debugger;
-                        return '<a>Delete</a>';
-                    }
+                    "render": function (data) {
+                        return "<a class='btn btn-default btn-sm' href='@Url.Action("Edit", "Employee")/" + data + "')><i class='fa fa-pencil'> </i>Edit</a> <a class='btn btn-danger btn-sm' style='margin-left:5px'href='@Url.Action("Delete", "Employee")/" + data + "'><i class='fa fa-trash'> </i>Delete</a>";
+                    },
+                    "width": "150px"
                 },
             ],
         });
     });
+
 </script>

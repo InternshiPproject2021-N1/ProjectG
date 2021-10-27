@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Converters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text.Json.Serialization;
 using System.Web;
 
 namespace CODEFIRST_ASP.NET.Models
@@ -39,6 +41,7 @@ namespace CODEFIRST_ASP.NET.Models
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Display(Name = "Create Date")]
+        [JsonConverter(typeof(IsoDateTimeConverter))]
         public DateTime Create { get; set; }
 
         [Display(Name = "Created By")]
